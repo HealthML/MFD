@@ -1,5 +1,10 @@
 Metadata-guided Feature Disentanglement for Functional Genomics
 ==============================
+*Alexander Rakowski, Remo Monti, Viktoriia Huryn, Marta Lemanczyk, Uwe Ohler, Christoph Lippert*
+
+Accepted for publication at ECCB 2024.
+
+arXiv preprint: https://arxiv.org/abs/2405.19057
 
 # Setup
 
