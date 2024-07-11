@@ -6,6 +6,8 @@ Accepted for publication at ECCB 2024.
 
 arXiv preprint: https://arxiv.org/abs/2405.19057
 
+Data used for model training: https://figshare.com/ndownloader/files/38200983
+
 **Code will be added soon**
 
 # Setup
