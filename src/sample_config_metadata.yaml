@@ -1,0 +1,95 @@
+#######################
+# Biological features #
+#######################
+
+Biosample_term_name:
+    type: 'category'
+    intermediate: 'embed'
+    intermediate_dim: 96
+
+Biosample_organ_slims:
+    type: 'category'
+    intermediate: 'multihot'
+
+Biosample_system_slims:
+    type: 'category'
+    intermediate: 'multihot'
+
+Biosample_developmental_slims:
+    type: 'category'
+    intermediate: 'multihot'
+
+proc_Biosample_life_stage:
+    type: 'category'
+    intermediate: 'embed'
+    intermediate_dim: 1
+
+proc_age_bin:
+    type: 'float'
+    intermediate: null
+
+proc_age_bin_units:
+    type: 'category'
+    intermediate: 'multihot'
+
+proc_target:
+    type: 'category'
+    intermediate: 'multihot'
+
+
+######################
+# Technical features #
+######################
+
+proc_Assay_lvl1:
+    type: 'category'
+    intermediate: 'multihot'
+
+Experiment_date_released:
+    type: 'date.year'
+    intermediate: 'multihot' # on the year level, maybe recode
+
+Library_lab:
+    type: 'category'
+    intermediate: 'multihot'
+
+five_percent_narrowpeaks_count:
+    type: 'int'
+    intermediate: 'embed'
+    intermediate_dim: 1
+
+spot2_score:
+    type: 'float'
+    intermediate: 'embed'
+    intermediate_dim: 1
+
+reproducible_peaks:
+    type: 'int'
+    intermediate: 'embed'
+    intermediate_dim: 1
+
+frip:
+    type: 'float'
+    intermediate: 'embed'
+    intermediate_dim: 1
+
+#############################
+# Feature group definitions #
+#############################
+
+# features should either be able to interact (feed into the same embedding layer after the intermediate transformation)
+# or be fed forward (after intermediate transformation) and concatenated to the output of the others
+
+biological_features:
+    direct:
+        variables: ['proc_target']
+    interact:
+        variables: ['Biosample_term_name','Biosample_organ_slims','Biosample_system_slims','Biosample_developmental_slims','proc_Biosample_life_stage', 'proc_age_bin', 'proc_age_bin_units']
+        out_dim: 256
+
+technical_features:
+    direct:
+        variables: ['proc_Assay_lvl1']
+    interact:
+        variables: ['proc_Assay_lvl1','Experiment_date_released','Library_lab'] # not sure we should include spot2_score, five_percent_narrowpeaks_count, frip, let's check in on this
+        out_dim: 128

@@ -1,0 +1,36 @@
+{
+    "method": "grid",
+    "parameters": {
+
+        "batch_size": {
+            "values": [
+                256
+            ]
+        },
+        "seq_len": {
+            "values": [
+                2176
+            ]
+        },
+        "seq_order": {
+            "values": [
+                2
+            ]
+        },
+        "lr": {
+            "values": [
+                0.001
+            ]
+        },
+        "seed_everything": {
+            "values": [
+                1
+            ]
+        },
+        "max_epochs": {
+            "values": [
+                5
+            ]
+        }
+    }
+}

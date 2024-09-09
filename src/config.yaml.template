@@ -1,0 +1,18 @@
+# path to ref FASTA genomes (there should be a <file>.fai index for every FASTA <file> )
+reference:
+        GRCh38: "/dhc/dsets/reference_genomes/ensembl/Homo_sapiens.GRCh38.dna.primary_assembly_renamed.fa"
+        mm10: "/dhc/groups/fglippert/dna_transformers_disentanglement/mm10.fa.gz"
+
+defaults:
+        metadata_file: "data/processed/221111_encode_metadata_processed.tsv"
+        metadata_mapping_config: "src/config_metadata_target_interactions.yaml"
+
+scratch_dir: null
+
+# weights and biases
+wandb:
+        username: '' # not used, sign in before.
+        project: ''
+        entity: ''
+        sweep_config_file: 'sweep_configurations/default_sweep_config.json' # default sweep config
+        current_sweep_id_file: 'src/current_sweep_id.txt'

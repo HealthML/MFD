@@ -1,0 +1,26 @@
+name: nucleotran
+channels:
+  - pytorch
+  - bioconda
+  - conda-forge
+  - defaults
+dependencies:
+  - cudatoolkit=10.2.89=h8f6ccaa_10
+  - ipywidgets
+  - jupyterlab
+  - matplotlib
+  - pandas
+  - pip
+  - pyfaidx
+  - pyranges
+  - python=3.9.5=h49503c6_0_cpython
+  - pytorch=1.11.0=py3.9_cuda10.2_cudnn7.6.5_0
+  - torchmetrics==0.11.0
+  - scikit-learn
+  - seaborn
+  - tqdm
+  - rich
+  - pip:
+    - h5py==3.6.0
+    - pytorch-lightning[extra]
+    - wandb
