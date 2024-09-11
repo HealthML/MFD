@@ -6,6 +6,8 @@ Paper: https://doi.org/10.1093/bioinformatics/btae403
 
 Data used for model training: https://figshare.com/ndownloader/files/38200983
 
+![Model Schematic](https://github.com/HealthML/MFD/blob/main/model_schematic_slide_1.png?raw=true)
+
 # Setup
 
 1. clone the repository
